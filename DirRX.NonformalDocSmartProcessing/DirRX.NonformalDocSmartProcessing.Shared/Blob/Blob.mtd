@@ -22,6 +22,19 @@
   "IconResourcesKeys": [],
   "LayeredFromGuid": "668418c4-bd08-4aeb-94d7-d0c30869c1a0",
   "OperationsClass": "",
+  "Properties": [
+    {
+      "$type": "Sungero.Metadata.LongIntegerPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "a764875e-1fee-4b26-b101-c31d0907077f",
+      "Name": "ExistingDocId",
+      "CanBeSearch": false,
+      "Code": "ExistingDocId",
+      "IsShowedInList": false,
+      "IsVisibility": false,
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
+      "PreviousPropertyGuid": "ecc2b331-8ac7-4fbb-8e6b-0bcd1a5f1a6b"
+    }
+  ],
   "PublicStructures": [],
   "ResourcesKeys": [],
   "RibbonCardMetadata": {
