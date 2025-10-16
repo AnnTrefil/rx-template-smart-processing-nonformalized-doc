@@ -113,6 +113,16 @@
         "LayeredFromGuid"
       ],
       "ProcessStagesDisplayMode": "Hide"
+    },
+    {
+      "$type": "Sungero.Metadata.ScriptBlockMetadata, Sungero.Workflow.Shared",
+      "NameGuid": "4a2c8496-8784-412e-9023-572a0bbe4632",
+      "Name": "SmartProcessNonformalDocDirRX",
+      "BaseGuid": "1f76cc5d-f096-4062-b34a-51b3c02269f2",
+      "HandledEvents": [
+        "SmartProcessNonformalDocDirRXExecute"
+      ],
+      "ProcessStagesDisplayMode": "Show"
     }
   ],
   "ClientBaseAssemblyName": "DirRX.NonformalDocSmartProcessing.ClientBase",
@@ -153,6 +163,71 @@
     }
   ],
   "LayeredFromGuid": "bb685d97-a673-42ea-8605-66889967467f",
+  "PublicConstants": [
+    {
+      "Name": "ElectronicLineText",
+      "ParentClasses": [
+        "Module"
+      ],
+      "TypeName": "System.String",
+      "Value": "\"ElectronicProcessing\""
+    }
+  ],
+  "PublicFunctions": [
+    {
+      "Name": "ElectronicToArio",
+      "Parameters": [
+        {
+          "Name": "docs",
+          "ParameterType": "global::System.Collections.Generic.List<global::Sungero.Docflow.IOfficialDocument>",
+          "ParameterTypeFullName": "System.Collections.Generic.List"
+        }
+      ],
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String"
+    },
+    {
+      "Name": "ProcessCapturedPackage",
+      "Parameters": [
+        {
+          "Name": "blobPackage",
+          "ParameterType": "global::Sungero.SmartProcessing.IBlobPackage",
+          "ParameterTypeFullName": "Sungero.SmartProcessing.IBlobPackage, Sungero.Domain.Interfaces"
+        }
+      ],
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    },
+    {
+      "Name": "ProcessPackageInArioS",
+      "Parameters": [
+        {
+          "Name": "blobPackage",
+          "ParameterType": "global::Sungero.SmartProcessing.IBlobPackage",
+          "ParameterTypeFullName": "Sungero.SmartProcessing.IBlobPackage, Sungero.Domain.Interfaces"
+        }
+      ],
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    },
+    {
+      "Name": "ProcessToArioIfNecessary",
+      "Parameters": [
+        {
+          "Name": "box",
+          "ParameterType": "global::Sungero.ExchangeCore.IBoxBase",
+          "ParameterTypeFullName": "Sungero.ExchangeCore.IBoxBase, Sungero.Domain.Interfaces"
+        },
+        {
+          "Name": "documents",
+          "ParameterType": "global::System.Collections.Generic.List<global::Sungero.Docflow.IOfficialDocument>",
+          "ParameterTypeFullName": "System.Collections.Generic.List"
+        }
+      ],
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    }
+  ],
   "PublicStructures": [],
   "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "ResourceInterfaceNamespace": "DirRX.NonformalDocSmartProcessing.Module.SmartProcessing",

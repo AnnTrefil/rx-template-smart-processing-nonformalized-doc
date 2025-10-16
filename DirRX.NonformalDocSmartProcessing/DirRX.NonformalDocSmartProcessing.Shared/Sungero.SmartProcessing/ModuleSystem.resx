@@ -58,4 +58,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Block_4a2c84968784412e9023572a0bbe4632" xml:space="preserve">
+    <value>Smart processing nonformalized exchange document</value>
+  </data>
+  <data name="Block_4a2c84968784412e9023572a0bbe4632_Description" xml:space="preserve">
+    <value>Неформализованные документы, поступившие из сервиса электронного обмена Диадок, будут автоматически интеллектуально обрабатываться сервисами Ario</value>
+  </data>
 </root>
