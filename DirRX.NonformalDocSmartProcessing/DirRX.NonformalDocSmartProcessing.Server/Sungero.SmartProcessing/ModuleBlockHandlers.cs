@@ -17,14 +17,14 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server.SmartP
         List<Sungero.Docflow.IOfficialDocument> documents = _obj.AllAttachments.Where(a => Sungero.Docflow.OfficialDocuments.Is(a))
           .Select(a => Sungero.Docflow.OfficialDocuments.As(a)).ToList();
 
-        Logger.DebugFormat("SmartProcessNonformalDoc. ProcessToArioDirRXExecute. ID задачи: {0}. Обработка. Приложены следующие документы (ид): {1}.",
+        Logger.DebugFormat("SmartProcessNonformalDoc. SmartProcessNonformalDocDirRXExecute. ID задачи: {0}. Обработка. Приложены следующие документы (ид): {1}.",
                            _obj.Id, string.Join(", ", documents.Select(d => d.Id)));
         
         var box = Sungero.Exchange.ExchangeDocumentProcessingTasks.Is(_obj) ? Sungero.Exchange.ExchangeDocumentProcessingTasks.As(_obj).Box : null;
 
         if (box == null)
         {
-          Logger.DebugFormat("SmartProcessNonformalDoc. ProcessToArioDirRXExecute. ID задачи: {0}. box is null, stopping process.", _obj.Id);
+          Logger.DebugFormat("SmartProcessNonformalDoc. SmartProcessNonformalDocDirRXExecute. ID задачи: {0}. box is null, stopping process.", _obj.Id);
           return;
         }
 
