@@ -7,14 +7,14 @@ using Sungero.Workflow;
 
 namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server.SmartProcessingBlocks
 {
-  partial class SmartProcessNonformalDocDirRXHandlers
+  partial class SmartProcessNonformalDocHandlers
   {
 
-    public virtual void SmartProcessNonformalDocDirRXExecute()
+    public virtual void SmartProcessNonformalDocExecute()
     {
       try
       {
-        List<Sungero.Docflow.IOfficialDocument> documents = _obj.AllAttachments.Where(a => Sungero.Docflow.OfficialDocuments.Is(a))
+        var documents = _obj.AllAttachments.Where(a => Sungero.Docflow.OfficialDocuments.Is(a))
           .Select(a => Sungero.Docflow.OfficialDocuments.As(a)).ToList();
 
         Logger.DebugFormat("SmartProcessNonformalDoc. SmartProcessNonformalDocDirRXExecute. ID задачи: {0}. Обработка. Приложены следующие документы (ид): {1}.",
@@ -28,7 +28,7 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server.SmartP
           return;
         }
 
-        Functions.Module.ProcessToArioIfNecessary(box, documents);
+        Functions.Module.ProcessToArio(box, documents);
       }
       catch (Exception ex)
       {

@@ -15,7 +15,7 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
       // Доп.соглашение.
       var document = Sungero.Contracts.SupAgreements.Null;
       
-      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocIdDirRX;
+      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocId;
       if (currentDocId != null)
       {
         var officialDocument = Sungero.Docflow.OfficialDocuments.GetAll().Where(d => d.Id == currentDocId).FirstOrDefault();
@@ -56,7 +56,7 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
       // Товарная накладная.
       var document = Sungero.FinancialArchive.Waybills.Null;
       
-      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocIdDirRX;
+      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocId;
       if (currentDocId != null)
       {
         var officialDocument = Sungero.Docflow.OfficialDocuments.GetAll().Where(d => d.Id == currentDocId).FirstOrDefault();
@@ -97,7 +97,7 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
       // УПД.
       var document = Sungero.FinancialArchive.UniversalTransferDocuments.Null;
       
-      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocIdDirRX;
+      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocId;
       if (currentDocId != null)
       {
         var officialDocument = Sungero.Docflow.OfficialDocuments.GetAll().Where(d => d.Id == currentDocId).FirstOrDefault();
@@ -138,7 +138,7 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
       // УКД.
       var document = Sungero.FinancialArchive.UniversalTransferDocuments.Null;
       
-      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocIdDirRX;
+      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocId;
       if (currentDocId != null)
       {
         var officialDocument = Sungero.Docflow.OfficialDocuments.GetAll().Where(d => d.Id == currentDocId).FirstOrDefault();
@@ -173,6 +173,7 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
       
       return document;
     }
+    
     public override Sungero.Docflow.IOfficialDocument CreateTaxInvoice(Sungero.SmartProcessing.Structures.Module.IDocumentInfo documentInfo, Sungero.Company.IEmployee responsible)
     {
       Logger.Debug("CreateTaxInvoice: Start.");
@@ -190,7 +191,7 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
         documentParties = this.GetRecognizedTaxInvoiceParties(documentInfo.ArioDocument.Facts, defaultBusinessUnit);
       }
       
-      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocIdDirRX;
+      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocId;
       
       if (documentParties.IsDocumentOutgoing.Value == true)
       {
@@ -274,7 +275,7 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
         documentParties = this.GetRecognizedTaxInvoiceParties(documentInfo.ArioDocument.Facts, defaultBusinessUnit);
       }
       
-      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocIdDirRX;
+      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocId;
       
       if (documentParties.IsDocumentOutgoing.Value == true)
       {
@@ -354,7 +355,7 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
       Logger.Debug("CreateSimpleDocument: Start.");
       
       var document = Sungero.Docflow.SimpleDocuments.Null;
-      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocIdDirRX;
+      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocId;
       
       if (currentDocId != null)
         return document;
@@ -380,7 +381,7 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
       // Входящее письмо.
       var document = Sungero.RecordManagement.IncomingLetters.Null;
       
-      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocIdDirRX;
+      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocId;
       if (currentDocId != null)
       {
         var officialDocument = Sungero.Docflow.OfficialDocuments.GetAll().Where(d => d.Id == currentDocId).FirstOrDefault();
@@ -421,7 +422,7 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
       // Счет на оплату.
       var document = Sungero.Contracts.IncomingInvoices.Null;
       
-      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocIdDirRX;
+      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocId;
       if (currentDocId != null)
       {
         var officialDocument = Sungero.Docflow.OfficialDocuments.GetAll().Where(d => d.Id == currentDocId).FirstOrDefault();
@@ -462,7 +463,7 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
       // Акт выполненных работ.
       var document = Sungero.FinancialArchive.ContractStatements.Null;
       
-      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocIdDirRX;
+      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocId;
       if (currentDocId != null)
       {
         var officialDocument = Sungero.Docflow.OfficialDocuments.GetAll().Where(d => d.Id == currentDocId).FirstOrDefault();
@@ -503,7 +504,7 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
       // Договор.
       var document = Sungero.Contracts.Contracts.Null;
       
-      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocIdDirRX;
+      var currentDocId = DirRX.NonformalDocSmartProcessing.Blobs.As(documentInfo.ArioDocument.OriginalBlob).ExistingDocId;
       if (currentDocId != null)
       {
         var officialDocument = Sungero.Docflow.OfficialDocuments.GetAll().Where(d => d.Id == currentDocId).FirstOrDefault();
@@ -566,9 +567,8 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
     /// </summary>
     /// <param name="box">Абонентский ящик.</param>
     /// <param name="documents">Документы.</param>
-    /// <param name="serviceMessageId">Id сообщения.</param>
     [Public]
-    public virtual void ProcessToArioIfNecessary(Sungero.ExchangeCore.IBoxBase box, List<Sungero.Docflow.IOfficialDocument> documents)
+    public virtual void ProcessToArio(Sungero.ExchangeCore.IBoxBase box, List<Sungero.Docflow.IOfficialDocument> documents)
     {
       var exchangeDocs = documents.Where(doc => Sungero.Docflow.ExchangeDocuments.Is(doc)).ToList();
       var incomingInvoice = documents.Where(doc => Sungero.Contracts.IncomingInvoices.Is(doc)).ToList();
@@ -576,15 +576,14 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
       
       var nonfDocsIds = string.Join(", ", exchangeDocs.Select(doc => doc.Id));
 
-      Logger.DebugFormat("ProcessToArioIfNecessary. Старт обработки сообщения системы обмена: абонентский ящик: {0}, ИД документов: {1}",
+      Logger.DebugFormat("ProcessToArio. Старт обработки сообщения системы обмена: абонентский ящик: {0}, ИД документов: {1}",
                          box.Name, nonfDocsIds);
       
       // Неформализованные документы отправляем на обработку в Арио.
       if (exchangeDocs.Any() )
-        this.ElectronicToArio(exchangeDocs);
-
+        this.FillingDocumentCardsInArio(exchangeDocs);
       
-      Logger.DebugFormat("ProcessToArioIfNecessary. Завершена обработка сообщения системы обмена.");
+      Logger.DebugFormat("ProcessToArio. Завершена обработка сообщения системы обмена.");
     }
     
     /// <summary>
@@ -593,13 +592,13 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
     /// <param name="docs">Документы типа ExchangeDocument.</param>
     /// <returns>Текст ошибки в случае её появления</returns>
     [Public]
-    public virtual string ElectronicToArio(List<Sungero.Docflow.IOfficialDocument> docs)
+    public virtual string FillingDocumentCardsInArio(List<Sungero.Docflow.IOfficialDocument> docs)
     {
       var result = string.Empty;
       
       if (docs == null)
       {
-        result = "ElectronicToArio: an empty list submitted to input";
+        result = "FillingDocumentCardsInArio: an empty list submitted to input";
         Logger.Error(result);
         return result;
       }
@@ -626,7 +625,7 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
       foreach (var doc in docs.Where(d => d.HasVersions == true))
       {
         var newBlob = NonformalDocSmartProcessing.Blobs.Create();
-        newBlob.ExistingDocIdDirRX  = doc.Id;
+        newBlob.ExistingDocId  = doc.Id;
         var lVer = doc.LastVersion;
         newBlob.OriginalFileName = doc.Id.ToString() + "." + lVer.AssociatedApplication.Extension;
         newBlob.FilePath = "Original." + lVer.AssociatedApplication.Extension;
@@ -769,7 +768,6 @@ namespace DirRX.NonformalDocSmartProcessing.Module.SmartProcessing.Server
         : Encryption.Decrypt(smartProcessingSettings.Password);
       return Sungero.ArioExtensions.ArioConnector.Get(smartProcessingSettings.ArioUrl, timeout, smartProcessingSettings.Login, password);
     }
-    
-    
+       
   }
 }

@@ -26,9 +26,9 @@
     {
       "$type": "Sungero.Metadata.LongIntegerPropertyMetadata, Sungero.Metadata",
       "NameGuid": "a764875e-1fee-4b26-b101-c31d0907077f",
-      "Name": "ExistingDocIdDirRX",
+      "Name": "ExistingDocId",
       "CanBeSearch": false,
-      "Code": "ExistingDocIdD",
+      "Code": "ExistingDocId",
       "IsShowedInList": false,
       "IsVisibility": false,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
