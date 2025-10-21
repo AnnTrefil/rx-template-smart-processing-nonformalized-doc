@@ -10,29 +10,13 @@
 
 Состав объектов разработки:
 1.	Перекрытие модуля «Интеллектуальная обработка» (SmartProcessing).
-2.	Блок типа Скрипт. Название заменяем с «Обработка документов сервисами Ario» на «Распознавание неформализованных документов эл. обмена.»
+2.	Блок типа Скрипт «Распознавание неформализованных документов эл. обмена.»
 3.	Перекрытие справочника «Бинарные образы документов» (Blob). 
-4.	Добавление заказного свойства ExistingDocId в перекрытии справочника «Бинарные образы документов» (Blob). 
-5.	Константу ElectronicLineText.
-6.	Переопределенные функции:
-   a.	CreateSupAgreement;
-   b.	CreateWaybill;
-   c.	CreateUniversalTransferDocument;
-   d.	CreateUniversalTransferCorrectionDocument;
-   e.	CreateTaxInvoice;
-   f.	CreateTaxInvoiceCorrection;
-   g.	CreateSimpleDocument;
-   h.	CreateIncomingLetter;
-   i.	CreateIncomingInvoice;
-   j.	CreateContractStatement;
-   k.	CreateContract;
-7.	Функции:
-   a.	ProcessToArio;
-   b.	FillingDocumentCardsInArio;
-   c.	ProcessPackageInArioS
-8.	Копии функций базового слоя:
-   a.	ProcessCapturedPackage;
-   b.	GetArioConnector
+4.	Заказное свойство ExistingDocId в перекрытии справочника «Бинарные образы документов» (Blob). 
+5.	Константа ElectronicLineText.
+6.	Переопределенные функции: CreateSupAgreement, CreateWaybill, CreateUniversalTransferDocument, CreateUniversalTransferCorrectionDocument, CreateTaxInvoice, CreateTaxInvoiceCorrection, CreateSimpleDocument, CreateIncomingLetter, CreateIncomingInvoice, CreateContractStatement, CreateContract.
+7.	Функции:	ProcessToArio, FillingDocumentCardsInArio, ProcessPackageInArioS.
+8.	Копии функций базового слоя: ProcessCapturedPackage, GetArioConnector.
 
 
 > [!NOTE]
